@@ -17,7 +17,7 @@ contract Ontropy {
         hashes = _hash;
     }
 
-    function reveal(uint c, bytes32 salt) public {
+    function reveal(uint c) public {
         require(hashes[msg.sender] == keccak256(abi.encodePacked(c)), "Invalid hash");
         require(c =< n, "Invalid value");
         
